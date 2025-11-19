@@ -1,4 +1,4 @@
-# Customer Behavior Prediction & Segmentation Agent
+# Customer Behavior Segmentation Agent
 
 An AI-powered customer segmentation agent built with Amazon Bedrock AgentCore that analyzes customer data from S3 and provides intelligent insights using code interpretation capabilities.
 

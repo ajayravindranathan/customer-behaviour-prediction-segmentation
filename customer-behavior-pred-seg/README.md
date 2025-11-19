@@ -1,12 +1,12 @@
-# Feature Engineering Agent - Portable Deployment
+# Customer Behaviour Prediction Agent
 
-An AI-powered agent for automating customer migration propensity analysis and feature engineering, designed to deploy on any fresh AWS account.
+An AI-powered agent for automating customer migration related propensity analysis and feature engineering, designed to deploy on any fresh AWS account.
 
 ## Overview
 
 This agent automates:
 - Exploring customer data from S3
-- Generating predictive features using AI (Claude 3.7 Sonnet)
+- Generating predictive features using AI
 - Creating feature engineering pipelines with AWS Glue
 - Training migration propensity models with SageMaker/AutoGluon
 
