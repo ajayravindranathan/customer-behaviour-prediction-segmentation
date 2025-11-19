@@ -1,0 +1,6 @@
+streamlit
+plotly
+pandas
+boto3
+pyyaml
+requests

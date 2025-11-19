@@ -1,0 +1,15 @@
+numpy<2
+--pre autogluon.cloud
+
+# Web App Dependencies
+streamlit
+plotly
+
+# Development & Deployment Tools
+bedrock-agentcore-starter-toolkit>=0.1.21
+
+boto3
+pandas
+
+scikit-learn
+
