@@ -235,7 +235,7 @@ To remove all resources:
 
 ```bash
 # Delete agent
-agentcore delete enhanced_feature_agent
+agentcore destroy
 
 # Delete IAM roles (manual)
 aws iam delete-role --role-name GlueServiceRole
@@ -265,7 +265,3 @@ For issues or questions:
 2. Verify IAM permissions are correctly set
 3. Ensure AWS CLI is configured with correct credentials
 4. Check that all required AWS services are available in your region
-
-## License
-
-Internal use only - BT Networks customer behavior prediction project.
