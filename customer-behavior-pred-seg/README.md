@@ -68,7 +68,23 @@ This will create:
 - S3 bucket: `feature-engineering-{ACCOUNT_ID}` for Glue scripts
 - Updates AgentCore role (if exists) with required permissions
 
-### Step 3: Run the Web Interface
+### Step 3: Generate Sample Data
+
+Generate customer data and upload to S3:
+
+```bash
+cd ../data
+export S3_BUCKET=feature-engineering-$(aws sts get-caller-identity --query Account --output text)
+python generate_customer_data.py
+cd ../customer-behavior-pred-seg
+```
+
+This will:
+- Generate 10,000 synthetic customer records with realistic propensity patterns
+- Upload data to `s3://feature-engineering-{ACCOUNT_ID}/raw-data/`
+- Create timestamped CSV files to avoid conflicts
+
+### Step 4: Run the Web Interface
 
 ```bash
 chmod +x run_webapp.sh
@@ -86,7 +102,6 @@ Access the webapp at: http://localhost:8501
 - `webapp_requirements.txt` - Webapp dependencies
 
 ### Deployment Files
-- `.bedrock_agentcore.yaml.template` - AgentCore configuration template
 - `iam-policy.json` - Portable IAM policy (no hardcoded accounts)
 - `setup_iam.sh` - IAM setup script
 - `deploy.sh` - Agent deployment script
