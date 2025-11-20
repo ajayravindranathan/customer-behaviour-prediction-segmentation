@@ -1,52 +1,69 @@
-# Customer Behavior Segmentation Agent
+# 🔍 Customer Behavior Segmentation Agent
 
 An AI-powered customer segmentation agent built with Amazon Bedrock AgentCore that analyzes customer data from S3 and provides intelligent insights using code interpretation capabilities.
 
-## Features
+> **Part of the [Customer Behavior Prediction & Segmentation](../README.md) platform**
 
-- Customer data analysis and segmentation using AI
-- S3 integration for data storage and retrieval
-- Code interpretation for advanced analytics
-- Web interface for interactive analysis
-- Automated deployment with AWS permissions setup
+**✅ Fully Portable** - Deploy to any AWS account and region with zero hardcoded values
+
+## Overview
+
+This agent provides:
+- **Interactive Customer Analysis**: AI-powered data exploration and insights
+- **Intelligent Segmentation**: Automated customer grouping based on behavior patterns  
+- **Code Interpretation**: Advanced analytics with secure Python execution
+- **S3 Integration**: Seamless data storage and retrieval
+- **Web Interface**: User-friendly interface for data analysis
+
+## Architecture
+
+- **Runtime**: Amazon Bedrock AgentCore
+- **Framework**: Strands Agents  
+- **Interface**: Streamlit web app
+- **Processing**: AgentCore Code Interpreter, S3
+- **Region**: Configurable (defaults to us-east-1)
 
 ## Prerequisites
 
-- AWS CLI configured with appropriate permissions
-- Python 3.11+
-- AgentCore CLI: `pip install bedrock-agentcore`
-- An AWS account with Bedrock access
-
-## Quick Start
-0. Create a SageMaker notebook and upgrade python version to 3.11
-
-bash
-# Create new environment with Python 3.11
-conda create -n py311 python=3.11 ipykernel
-
-# Activate the environment
-conda activate py311
-
-# Install Jupyter kernel
-python -m ipykernel install --user --name py311 --display-name "Python 3.11"
-
-
-
-1. **Clone and setup environment**:
+1. **AWS Account** with appropriate permissions
+2. **AWS CLI** configured with credentials  
+3. **Python 3.11+** installed
+4. **Docker** (for AgentCore deployment)
+5. **Bedrock AgentCore CLI** installed:
    ```bash
-   cp .env.template .env
-   # Edit .env with your values (see Configuration section)
+   pip install bedrock-agentcore
    ```
 
-2. **Deploy everything**:
-   ```bash
-   ./deploy.sh
-   ```
+## Quick Start (Fresh AWS Account)
 
-3. **Test the agent**:
-   ```bash
-   agentcore invoke '{"prompt": "Show me the first 10 rows of customer data"}'
-   ```
+### Step 1: Setup Environment
+```bash
+# Configure AWS region (optional, defaults to us-east-1)
+export AWS_REGION=us-east-1
+
+# Copy and configure environment template
+cp .env.template .env
+# Edit .env with your S3 bucket and data path
+```
+
+### Step 2: Deploy the Agent
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+This will:
+1. Install dependencies
+2. Deploy agent to Bedrock AgentCore  
+3. Setup IAM permissions automatically
+4. Save agent ARN to `.env` file
+
+**Note**: Deployment takes 5-10 minutes.
+
+### Step 3: Test the Agent
+```bash
+agentcore invoke '{"prompt": "Show me the first 10 rows of customer data"}'
+```
 
 ## Configuration
 

@@ -1,6 +1,10 @@
-# Customer Behaviour Prediction Agent
+# 🎯 Customer Behaviour Prediction Agent
 
 An AI-powered agent for automating customer migration related propensity analysis and feature engineering, designed to deploy on any fresh AWS account.
+
+> **Part of the [Customer Behavior Prediction & Segmentation](../README.md) platform**
+
+**✅ Fully Portable** - Deploy to any AWS account and region with zero hardcoded values
 
 ## Overview
 
