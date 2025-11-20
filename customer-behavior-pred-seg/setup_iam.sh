@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 # Setup IAM roles and policies for Feature Engineering Agent
 # This script is portable and works on any fresh AWS account
 
