@@ -245,7 +245,23 @@ This will:
    • S3 Bucket: s3://feature-engineering-ACCOUNT
 ```
 
-### Step 4: ⏰ WAIT Another 15 Minutes
+### Step 4: Generate Sample Data
+
+Generate customer data and upload to S3:
+
+```bash
+cd ../data
+export S3_BUCKET=feature-engineering-$(aws sts get-caller-identity --query Account --output text)
+python generate_customer_data.py
+cd ../customer-behavior-pred-seg
+```
+
+This will:
+- Generate 10,000 synthetic customer records with realistic propensity patterns
+- Upload data to `s3://feature-engineering-{ACCOUNT_ID}/raw-data/`
+- Create timestamped CSV files to avoid conflicts
+
+### Step 5: ⏰ WAIT Another 15 Minutes
 
 Policy attachments also need propagation time.
 
@@ -253,7 +269,7 @@ Policy attachments also need propagation time.
 sleep 900  # 15 minutes
 ```
 
-### Step 5: Test Agent
+### Step 6: Test Agent
 
 ```bash
 # Run web interface
