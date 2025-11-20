@@ -1,5 +1,5 @@
 """
-Enhanced Feature Engineering Agent for Telecom Customer Migration Propensity Models
+Enhanced Feature Engineering and ML Agent for Telecom Customer Migration Propensity Models
 
 This agent:
 1. Accesses S3 data directly for exploration
@@ -9,7 +9,6 @@ This agent:
 
 Deployed on Amazon Bedrock AgentCore Runtime.
 """
-
 import json
 import boto3
 import pandas as pd
