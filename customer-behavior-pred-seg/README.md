@@ -75,7 +75,7 @@ Generate customer data and upload to S3:
 ```bash
 cd ../data
 export S3_BUCKET=feature-engineering-$(aws sts get-caller-identity --query Account --output text)
-python generate_customer_data.py
+python3 generate_customer_data.py
 cd ../customer-behavior-pred-seg
 ```
 
