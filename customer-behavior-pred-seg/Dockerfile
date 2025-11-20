@@ -6,8 +6,8 @@ ENV UV_SYSTEM_PYTHON=1 \
     UV_NO_PROGRESS=1 \
     PYTHONUNBUFFERED=1 \
     DOCKER_CONTAINER=1 \
-    AWS_REGION=us-east-1 \
-    AWS_DEFAULT_REGION=us-east-1
+    AWS_REGION=${AWS_REGION:-us-east-1} \
+    AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-us-east-1}
 
 # Install build dependencies for psutil and other packages
 RUN apt-get update && apt-get install -y gcc python3-dev && rm -rf /var/lib/apt/lists/*
