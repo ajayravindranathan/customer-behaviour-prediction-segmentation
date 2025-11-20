@@ -1000,9 +1000,6 @@ def train_propensity_models(model_type: str, features_s3_path: str = None, tool_
         job_id = f"{model_type}_{int(time.time())}"
         _active_training_jobs[model_type] = job_id
         
-        # Set the correct region for the S3 bucket
-        os.environ['AWS_DEFAULT_REGION'] = 'eu-west-1'
-        
         # Validate model type
         valid_models = {
             "churn": {"name": "churn_propensity", "target": "churn_after_migration"},

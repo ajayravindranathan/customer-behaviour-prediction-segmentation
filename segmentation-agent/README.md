@@ -18,6 +18,19 @@ An AI-powered customer segmentation agent built with Amazon Bedrock AgentCore th
 - An AWS account with Bedrock access
 
 ## Quick Start
+0. Create a SageMaker notebook and upgrade python version to 3.11
+
+bash
+# Create new environment with Python 3.11
+conda create -n py311 python=3.11 ipykernel
+
+# Activate the environment
+conda activate py311
+
+# Install Jupyter kernel
+python -m ipykernel install --user --name py311 --display-name "Python 3.11"
+
+
 
 1. **Clone and setup environment**:
    ```bash

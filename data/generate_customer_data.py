@@ -102,8 +102,9 @@ print(f"Generated {len(df)} customer records")
 print(f"Saved locally as: {csv_filename}")
 
 # Upload to S3
+import os
 s3_client = boto3.client('s3')
-bucket_name = 'post-migration-propensity-data'
+bucket_name = os.environ.get('S3_BUCKET', 'your-customer-data-bucket')
 s3_key = f'raw-data/{csv_filename}'
 
 try:

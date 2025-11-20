@@ -1,0 +1,45 @@
+# Environment files with account-specific values
+.env
+**/.env
+
+# AgentCore generated configuration (contains account IDs, ARNs, local paths)
+.bedrock_agentcore.yaml
+**/.bedrock_agentcore.yaml
+.bedrock_agentcore/
+**/.bedrock_agentcore/
+
+# Exception: Allow custom Dockerfile for enhanced feature engineering agent only
+!customer-behavior-pred-seg/.bedrock_agentcore/enhanced_feature_agent/Dockerfile
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+/tmp/
+agent-policy.json
+
+# Amazon Q CLI
+.amazonq/
